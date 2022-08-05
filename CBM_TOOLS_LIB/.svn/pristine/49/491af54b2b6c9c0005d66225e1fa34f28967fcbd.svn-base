@@ -1,0 +1,62 @@
+/*
+ * ecmfpopulation.h
+ *
+ *  Created on: Jul 11, 2014
+ *      Author: consciousness
+ */
+
+#ifndef ECMFPOPULATION_H_
+#define ECMFPOPULATION_H_
+
+#include <vector>
+#include <fstream>
+#include <iostream>
+#include <string>
+
+#include <CXXToolsInclude/stdDefinitions/pstdint.h>
+#include <CXXToolsInclude/randGenerators/randomc.h>
+#include <CXXToolsInclude/randGenerators/sfmt.h>
+//#include <CXXToolsInclude/fileIO/rawbytesrw.h>
+
+#include <CBMDataInclude/peristimhist/peristimhistfloat.h>
+#include <CBMDataInclude/interfaces/ectrialsdata.h>
+
+class ECMFPopulation
+{
+public:
+	ECMFPopulation(ECTrialsData *data);
+	ECMFPopulation(
+		int numMF, int randSeed, float fracCSTMF, float fracCSPMF, float fracCtxtMF, float fracCollNC,
+		float bgFreqMin = 1.0, float csBGFreqMin = 1.0, float ctxtFreqMin = 30.0, float csTFreqMin = 50.0, float csPFreqMin = 90.0,
+		float bgFreqMax = 10.0, float csBGFreqMax = 5.0, float ctxtFreqMax = 60.0, float csTFreqMax = 60.0, float csPFreqMax = 110.0,
+		float fracCSTMFB = 0.0, bool turnOffColls_ = false, float fracImportCells=0.0);
+	ECMFPopulation(std::fstream &infile);
+
+	~ECMFPopulation();
+
+	void writeToFile(std::fstream &outfile);
+	void writeMFLabels(std::string labelFileName);
+
+	float *getMFBG();
+	float *getMFInCSTonic();
+	float *getMFFreqInCSPhasic();
+
+private:
+	void setMFs(int numTypeMF, int numMF, CRandomSFMT0 *randGen, bool *isAny, bool *isType);
+	ct_uint32_t numMF;
+	float *mfFreqBG;
+	float *mfFreqInCSTonic;
+	float *mfFreqInCSPhasic;
+    bool *isCSTonicA;
+    bool *isCSTonicB;
+    bool *isCSPhasic;
+    bool *isContext;
+	bool *isCollateral;
+	bool *isImport;
+	bool *isAny;
+	bool turnOffColls;
+};
+
+
+
+#endif /* ECMFPOPULATION_H_ */
