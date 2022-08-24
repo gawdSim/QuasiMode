@@ -38,7 +38,7 @@ public:
 	CBMState* getstate();
 	void delstate();	
 //Sim
-	int gpuIndex = 2;
+	int gpuIndex = 0;
 	int gpuP2 = 2;
 	CBMSimCore* sim;
 	CBMSimCore* getsim();
@@ -48,7 +48,7 @@ public:
 	float threshDecayTau = 4.0;	
 	int randseed = 3;
 
-	float nucCollfrac = 0.00;
+	float nucCollfrac = 0.02;
 
 	// Basic Mossy Fibers
 	float CStonicMFfrac = 0.05;

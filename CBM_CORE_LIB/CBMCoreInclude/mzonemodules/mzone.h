@@ -8,11 +8,11 @@
 #ifndef MZONE_H_
 #define MZONE_H_
 
-#ifdef INTELCC
-#include <mathimf.h>
-#else //otherwise use standard math library
+// #ifdef INTELCC
+// #include <mathimf.h>
+// #else //otherwise use standard math library
 #include <math.h>
-#endif
+// #endif
 
 #include <vector>
 #include <sstream>

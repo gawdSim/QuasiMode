@@ -8,11 +8,11 @@
 #ifndef INNET_H_
 #define INNET_H_
 
-#ifdef INTELCC
-#include <mathimf.h>
-#else //otherwise use standard math library
+// #ifdef INTELCC
+// #include <mathimf.h>
+// #else //otherwise use standard math library
 #include <math.h>
-#endif
+// #endif
 
 #include <vector>
 #include <string.h>

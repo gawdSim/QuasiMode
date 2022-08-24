@@ -2513,7 +2513,7 @@ int numberConnections[25] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,3
 //int numberConnections[5] = {14, 16, 18, 20, 22};
 
 int span = 10;
-int numCon = 12;//numberConnections[goRecipParam];
+int numCon = 10;//numberConnections[goRecipParam];
 int numP = (span+1)*(span+1); 
 
 //Allocate Dat Shit Boi
@@ -2551,7 +2551,7 @@ bool recipParamArray_ReduceBase[11] = {false, false, false, false, false, false,
 bool recipParamArray_noRecip[11] = {false, false, false, false, false, false, false, false, false, false, true};
  
 
-float pRecipGOGO = 0.925;//recipParamArray_P[goRecipParam];
+float pRecipGOGO = 1.0;//recipParamArray_P[goRecipParam];
 bool noRecip = false;//recipParamArray_noRecip[goRecipParam];
 float pRecipLowerBase = 0.0;//recipParamArray_LowerP[goRecipParam];
 bool reduceBaseRecip = false;//recipParamArray_ReduceBase[goRecipParam];

@@ -1,6 +1,6 @@
 NAME = libcbm_visual
 
-CC = icpc
+CC = gcc
 
 DEFINES = -DINTELCC
 
@@ -48,7 +48,7 @@ $(OUTPATH)/connectivityview.obj $(OUTPATH)/spatialview.obj
 
 
 lib: obj
-	-$(CC) -G $(OBJ) $(QTLIBS) -o $(LIBPATH)/$(NAME).so \
+	-$(CC) -g $(OBJ) $(QTLIBS) -o $(LIBPATH)/$(NAME).so \
 	-Xlinker -rpath=$(DEPLIBPATH) -Xlinker --library-path=$(DEPLIBPATH) \
 	$(DEPLIBS)
 	-ln -sfn ../CBM_VISUAL_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/

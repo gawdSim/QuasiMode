@@ -11,11 +11,11 @@
 #include "innetconnectivitystate.h"
 #include <vector>
 
-#ifdef INTELCC
-#include <mathimf.h>
-#else //otherwise use standard math library
+//#ifdef INTELCC
+//#include <mathimf.h>
+//#else //otherwise use standard math library
 #include <math.h>
-#endif
+//#endif
 
 class InNetConStateGGIAltCon: public virtual InNetConnectivityState
 {

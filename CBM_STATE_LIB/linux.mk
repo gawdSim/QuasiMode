@@ -1,6 +1,6 @@
 NAME = libcbm_state
 
-CC = icpc
+CC = gcc
 
 DEFINES = -DINTELCC
 
@@ -53,7 +53,7 @@ $(OUTPATH)/iactivityparams.obj $(OUTPATH)/iinnetconstate.obj $(OUTPATH)/imzoneac
 OBJ = $(PARAMSOBJ) $(STATEOBJ) $(INTFOBJ)
 
 lib: obj
-	-$(CC) -G $(OBJ) -o $(LIBPATH)/$(NAME).so \
+	-$(CC) -g $(OBJ) -o $(LIBPATH)/$(NAME).so \
 	-Xlinker -rpath=$(DEPLIBPATH) -Xlinker --library-path=$(DEPLIBPATH) \
 	$(DEPLIBS)
 	-ln -sfn ../CBM_STATE_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/

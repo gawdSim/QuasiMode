@@ -2,7 +2,7 @@
 
 NAME=libcbm_data
 
-CC = icpc
+CC = gcc
 
 DEFINES = -DINTELCC
 
@@ -51,7 +51,7 @@ PERISTOBJ = $(OBJPATH)/peristimhist.obj $(OBJPATH)/peristimhistfloat.obj
 OBJ = $(SPIKEROBJ) $(OUTPUTOBJ) $(INTERFOBJ) $(PERISTOBJ)
 
 lib: spikeraster output interfaces peristim
-	-$(CC) -G $(OBJ) -o $(LIBPATH)/$(NAME).so \
+	-$(CC) -g $(OBJ) -o $(LIBPATH)/$(NAME).so \
 	-Xlinker -rpath=$(DEPLIBPATH) -Xlinker --library-path=$(DEPLIBPATH) \
 	$(DEPLIBS)
 	-ln -sfn ../CBM_DATA_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/

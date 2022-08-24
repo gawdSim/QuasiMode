@@ -8,11 +8,11 @@
 #ifndef ARRAYVALIDATE_H_
 #define ARRAYVALIDATE_H_
 
-#ifdef INTELCC
-#include <mathimf.h>
-#else
+// #ifdef INTELCC
+// #include <mathimf.h>
+// #else
 #include <math.h>
-#endif
+// #endif
 
 bool validateFloatArray(float *array, unsigned int numElements);
 

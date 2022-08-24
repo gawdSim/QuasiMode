@@ -1528,7 +1528,7 @@ float gNMDAIncGRGO;
 			as->gNMDAIncMFGO[i]=(0.00000011969*as->vGO[i]*as->vGO[i]*as->vGO[i])+(0.000089369*as->vGO[i]*as->vGO[i])+(0.0151*as->vGO[i])+0.7713; 
 		
 			as->gSum_MFGO[i] = (as->inputMFGO[i]/*ap->gIncMFtoGO*/*MFGO) + as->gSum_MFGO[i]*ap->gDecMFtoGO;
-			as->gSum_GOGO[i] = 0;//(as->inputGOGO[i]*gogoW/*ap->gGABAIncGOtoGO*/*as->synWscalerGOtoGO[i]) + as->gSum_GOGO[i]*ap->gGABADecGOtoGO;
+			as->gSum_GOGO[i] = (as->inputGOGO[i]*gogoW/*ap->gGABAIncGOtoGO*/*as->synWscalerGOtoGO[i]) + as->gSum_GOGO[i]*ap->gGABADecGOtoGO;
 
 			as->gNMDAMFGO[i]=as->inputMFGO[i]*(/*ap->gIncMFtoGO*/MFGO*ap->NMDA_AMPAratioMFGO*as->gNMDAIncMFGO[i])+as->gNMDAMFGO[i]*ap->gDecayMFtoGONMDA;	
 			as->gNMDAUBCGO[i]=as->inputUBCGO[i]*(ap->gIncUBCtoGO*1.0*as->gNMDAIncMFGO[i])+as->gNMDAMFGO[i]*ap->gDecayMFtoGONMDA;	

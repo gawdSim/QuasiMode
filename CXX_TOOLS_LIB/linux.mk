@@ -1,6 +1,6 @@
 NAME = libcxx_tools
 
-CC = icpc
+CC = gcc
 
 DEFINES = 
 #-DINTELCC
@@ -48,7 +48,7 @@ FILEIOOBJ = $(OUTPATH)/rawbytesrw.obj
 OBJ = $(RANDGENOBJ) $(MEMMGMTOBJ) $(FILEIOOBJ)
 
 lib: obj
-	-$(CC) -G $(OBJ) $(INTELLIBS) -o $(LIBPATH)/$(NAME).so
+	-$(CC) -g $(OBJ) $(INTELLIBS) -o $(LIBPATH)/$(NAME).so
 	-ln -sfn ../CXX_TOOLS_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/
 
 obj: randgenobj memmgmtobj fileioobj

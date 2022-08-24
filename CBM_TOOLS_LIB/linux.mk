@@ -1,6 +1,6 @@
 NAME = libcbm_tools
 
-CC = icpc
+CC = gcc
 
 DEFINES = -DINTELCC
 
@@ -39,7 +39,7 @@ OBJ = $(OUTPATH)/poissonregencells.obj $(OUTPATH)/eyelidintegrator.obj $(OUTPATH
 #OBJ = $(OUTPATH)/poissonregencells.obj $(OUTPATH)/ecmfpopulation.obj
 
 lib: obj
-	-$(CC) $(CFLAGS) -G $(OBJ) -o $(LIBPATH)/$(NAME).so \
+	-$(CC) $(CFLAGS) -g $(OBJ) -o $(LIBPATH)/$(NAME).so \
 	-Xlinker -rpath=$(DEPLIBPATH) -Xlinker --library-path=$(DEPLIBPATH) \
 	$(DEPLIBS)
 	-ln -sfn ../CBM_TOOLS_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/

@@ -2,7 +2,7 @@
 
 NAME = libcbm_core
 
-CC = icpc
+CC = gcc
 
 NVCC = nvcc
 
@@ -92,7 +92,7 @@ $(OUTPATH)/innetallgrgogrsubmfgr.obj
 OBJ = $(INTERFACEOBJ) $(CUDAOBJ) $(MZMOBJ) $(INMOBJ)
 
 lib: interface cuda mzm inm
-	-$(CC) $(CFLAGS) -G $(OBJ) $(CUDALIBS) -o $(LIBPATH)/$(NAME).so \
+	-$(CC) $(CFLAGS) -g $(OBJ) $(CUDALIBS) -o $(LIBPATH)/$(NAME).so \
 	-Xlinker -rpath=$(DEPLIBPATH) -Xlinker --library-path=$(DEPLIBPATH) \
 	$(DEPLIBS)
 	-ln -sfn ../CBM_CORE_LIB/$(LIBPATH)/$(NAME).so $(DEPLIBPATH)/
